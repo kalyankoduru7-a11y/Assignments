@@ -1,4 +1,4 @@
-LEVEL-2                                         
+ LEVEL-2                                         
 
 Create a program to print odd and even numbers between 1 to the number entered by the user.
 Hint => 

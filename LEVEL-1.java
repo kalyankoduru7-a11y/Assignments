@@ -1,4 +1,4 @@
-LEVEL-1                                       
+ LEVEL-1                                       
 Write a program to check if a number is divisible by 5
 I/P => number
 O/P => Is the number ___ divisible by 5? ___

@@ -1,4 +1,4 @@
-LEVEL-3                                                
+ LEVEL-3                                                
 Write a LeapYear program that takes a year as input and outputs the Year is a Leap Year or not a Leap Year. 
 Hint => 
 The LeapYear program only works for year >= 1582, corresponding to a year in the Gregorian calendar. So ensure to check for the same. 
