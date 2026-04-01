@@ -1,60 +1,68 @@
-LEVEL 3 
-1.Write a TemperaturConversion program, given the temperature in Celsius as input outputs the temperature in Fahrenheit
+LEVEL-3                                                
+Write a LeapYear program that takes a year as input and outputs the Year is a Leap Year or not a Leap Year. 
 Hint => 
-Create a celsius variable and take the temperature as user input
-Use the Formulae Celsius to Fahrenheit:   (°C × 9/5) + 32 = °F and assign to farenheitResult  and print the result
-I/P => celcius
-O/P =>  The ____ celsius is _____ fahrenheit
- CODE:-      
-  
-            import java.util.Scanner;
+The LeapYear program only works for year >= 1582, corresponding to a year in the Gregorian calendar. So ensure to check for the same. 
+Further, the Leap Year is a Year divisible by 4 and not 100 unless it is divisible by 400. E.g. 1800 is not a Leap Year and 2000 is a Leap Year.
+Write code having multiple if else statements based on conditions provided above and a second part having only one if statement and multiple logical 
 
-// Program to convert Celsius to Fahrenheit
-public class CelsiusToFahrenheit {
+import java.util.Scanner;
+
+public class LeapYear {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
+        int year;
 
-        System.out.print("Enter temperature in Celsius: ");
-        double celsius = input.nextDouble();
+        System.out.print("Enter a year: ");
+        year = sc.nextInt();
 
-        double fahrenheitResult = (celsius * 9 / 5) + 32;
-
-        System.out.println("The " + celsius + " celsius is " 
-                + fahrenheitResult + " fahrenheit");
+        if(year < 1582) {
+            System.out.println("Invalid year for Gregorian calendar");
+        }
+        else if(year % 400 == 0) {
+            System.out.println("The year is a Leap Year");
+        }
+        else if(year % 100 == 0) {
+            System.out.println("The year is NOT a Leap Year");
+        }
+        else if(year % 4 == 0) {
+            System.out.println("The year is a Leap Year");
+        }
+        else {
+            System.out.println("The year is NOT a Leap Year");
+        }
     }
 }
 
 
-Enter temperature in Celsius: 25
-The 25.0 celsius is 77.0 fahrenheit
+
+Enter a year: 2000
+The year is a Leap Year
+
+2.Rewrite program 1 to determine Leap Year with single if condition using logical and && and or || operators
 
 
-2.Write a TemperaturConversion program, given the temperature in Fahrenheit as input outputs the temperature in Celsius
-Hint => 
-Create a fahrenheit variable and take the user's input
-User the formulae to convert Fahrenheit to Celsius:   (°F − 32) x 5/9 = °C and assign the result to celsiusResult  and print the result
-I/P => fahrenheit
-O/P => The ____ fahrenheit is _____ celsius
-CODE:-
+import java.util.Scanner;
 
-                             import java.util.Scanner;
-
-// Program to convert Fahrenheit to Celsius
-public class FahrenheitToCelsius {
+public class LeapYearSingleIf {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        Scanner input = new Scanner(System.in);
+        int year;
 
-        System.out.print("Enter temperature in Fahrenheit: ");
-        double fahrenheit = input.nextDouble();
+        System.out.print("Enter a year: ");
+        year = sc.nextInt();
 
-        double celsiusResult = (fahrenheit - 32) * 5 / 9;
-
-        System.out.println("The " + fahrenheit + " fahrenheit is "
-                + celsiusResult + " celsius");
+        if(year >= 1582 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
+            System.out.println("The year is a Leap Year");
+        }
+        else {
+            System.out.println("The year is NOT a Leap Year");
+        }
     }
 }
 
-Enter temperature in Fahrenheit: 77
-The 77.0 fahrenheit is 25.0 celsius
+
+
+Enter a year: 2024
+The year is a Leap Year

@@ -1,62 +1,99 @@
-LEVEL 1
-1.Write a program to find the age of Harry if the birth year is 2000. Assume the Current Year is 2024
-  I/P => NONE
-  O/P => Harry's age in 2024 is ___ 
-        Code:- 
-                 // Program to find Harry's age in 2024
-  public class HarryAge {
-      public static void main(String[] args) {
+LEVEL-1                                       
+Write a program to check if a number is divisible by 5
+I/P => number
+O/P => Is the number ___ divisible by 5? ___
+import java.util.Scanner;
 
-        int birthYear = 2000;
-        int currentYear = 2024;
-
-        int age = currentYear - birthYear;
-
-        System.out.println("Harry's age in 2024 is " + age);
-    }
-}
-
-       Harry's age in 2024 is 24
-
-
-2.Sam’s mark in Maths is 94, Physics is 95 and Chemistry is 96 out of 100. Find the average percent mark in PCM
-I/P => NONE
-O/P => Sam’s average mark in PCM is ___ 
-CODE:-
-                 // Program to calculate average marks in PCM
-public class AveragePCM {
+public class DivisibleBy5 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        int maths = 94;
-        int physics = 95;
-        int chemistry = 96;
+        int number;
+        System.out.print("Enter a number: ");
+        number = sc.nextInt();
 
-        double average = (maths + physics + chemistry) / 3.0;
-
-        System.out.println("Sam's average mark in PCM is " + average);
+        if(number % 5 == 0)
+            System.out.println("Is the number divisible by 5? Yes");
+        else
+            System.out.println("Is the number divisible by 5? No");
     }
 }
 
-Sam's average mark in PCM is 95.0
+
+Enter a number: 25
+Is the number divisible by 5? Yes
 
 
-3.Create a program to convert the distance of 10.8 kilometers to miles.
-Hint: 1 km = 1.6 miles
-I/P => NONE
-O/P => The distance  ___ km in miles is ___
+2.  Write a program to check if the first is the smallest of the 3 numbers.
+I/P => number1, number2, number3
+O/P => Is the first number the smallest? ____
+import java.util.Scanner;
 
-CODE:-
-                 // Program to convert kilometers to miles
-public class KmToMiles {
+public class SmallestNumber {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        double kilometers = 10.8;
-        double milesPerKm = 1.6;
+        int number1, number2, number3;
 
-        double miles = kilometers * milesPerKm;
+        System.out.print("Enter three numbers: ");
+        number1 = sc.nextInt();
+        number2 = sc.nextInt();
+        number3 = sc.nextInt();
 
-        System.out.println("The distance " + kilometers + " km in miles is " + miles);
+        if(number1 < number2 && number1 < number3)
+            System.out.println("Is the first number the smallest? Yes");
+        else
+            System.out.println("Is the first number the smallest? No");
     }
 }
 
-The distance 10.8 km in miles is 17.28
+
+
+Enter three numbers: 2 5 9
+Is the first number the smallest? Yes
+
+
+
+3.Write a program to check if the first, second, or third number is the largest of the three.
+I/P => number1, number2, number3
+O/P => 
+Is the first number the largest? ____
+Is the second number the largest? ___
+Is the third number the largest? ___
+
+
+import java.util.Scanner;
+
+public class LargestNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int number1, number2, number3;
+
+        System.out.print("Enter three numbers: ");
+        number1 = sc.nextInt();
+        number2 = sc.nextInt();
+        number3 = sc.nextInt();
+
+        if(number1 > number2 && number1 > number3)
+            System.out.println("Is the first number the largest? Yes");
+        else
+            System.out.println("Is the first number the largest? No");
+
+        if(number2 > number1 && number2 > number3)
+            System.out.println("Is the second number the largest? Yes");
+        else
+            System.out.println("Is the second number the largest? No");
+
+        if(number3 > number1 && number3 > number2)
+            System.out.println("Is the third number the largest? Yes");
+        else
+            System.out.println("Is the third number the largest? No");
+    }
+}
+
+
+Enter three numbers: 4 10 7
+Is the first number the largest? No
+Is the second number the largest? Yes
+Is the third number the largest? No
